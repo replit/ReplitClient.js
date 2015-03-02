@@ -46,7 +46,6 @@ Returns a promise that would resolve with an object representing the result of t
 `.evaluate` takes the following options:
 * code: is a string of the program to be executed
 * options: is an object with the following optional properties:
-  * stdin: a function that would take callback to be called once an input is produced
   * stdout: a function that would recieve a string to be printed
 
 Examples:
@@ -60,12 +59,19 @@ repl.evaluate('puts "hello world"', {stdout: function(out) { console.log(out); }
     });
 ```
 
+## .write(str)
+
+Write `str` to the interpreter's stdin.
+
+Examples:
+
 ```js
 // Using stdin get an integer and add it to 3
-repl.evaluate('gets.to_i + 3', {stdin: function(cb) { cb(10); }})
+repl.evaluate('gets.to_i + 3')
     .then(function(result) {
       console.log(result.data); // 13
     });
+repl.write('10');
 ```
 
 ## .disconnect()
