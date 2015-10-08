@@ -67,7 +67,7 @@ Examples:
 
 ```js
 // Using stdin get an integer and add it to 3
-repl.evaluate('gets.to_i + 3', {stdout: function(o){ console.log(out)}})
+repl.evaluate('gets.to_i + 3', {stdout: function(out) { console.log(out); }})
     .then(function(result) {
       console.log(result.data); // 13
     });
