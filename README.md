@@ -9,10 +9,16 @@ Is the constructor and takes the following required paramaters:
 * hostname: the hostname string
 * port: the hostname port
 * language: the language name. For now it's one of:
+  * python3
   * python
   * ruby
   * java
   * go
+  * nodejs
+  * csharp
+  * fsharp
+  * cpp
+  * c
 * token: an object representing the authentication token and has the following properties:
   * time_created: a JS unix timestamp of the time the token was created
   * msg_mac: HMAC authentication code based on a secret and the `time_created` property
@@ -74,6 +80,29 @@ repl.evaluate('gets.to_i + 3', {stdout: function(out) { console.log(out); }})
 repl.write('10\n');
 ```
 
+## .evaluateOnce(code, options)
+
+Very similar to `.evaluate` but is http based and doesn't require an persistent connection to the server. In other words, no need to call `.connect` before calling this. 
+
 ## .disconnect()
 
 Disconnects.
+
+# Events
+
+## 'connecting'
+
+Emitted when trying to connect
+
+## 'connected'
+
+Emitted when connection and handshake is done
+
+## 'disconnected'
+
+When the socket is closed. It is passed an object with the following properties:
+
+* retry <boolean>: indicating whether we are going to retry
+* delay <milliseconds>: we are going to wait before attempting to retry
+
+Retries are currently capped at 7 times and with exponential backoff starting at 500ms
