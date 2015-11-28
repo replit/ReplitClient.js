@@ -102,7 +102,7 @@ Emitted when connection and handshake is done
 
 When the socket is closed. It is passed an object with the following properties:
 
-* retry <boolean>: indicating whether we are going to retry
-* delay <milliseconds>: we are going to wait before attempting to retry
+* retry (boolean): indicating whether we are going to retry
+* delay (milliseconds): we are going to wait before attempting to retry
 
 Retries are currently capped at 7 times and with exponential backoff starting at 500ms
