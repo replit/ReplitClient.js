@@ -80,6 +80,10 @@ repl.evaluate('gets.to_i + 3', {stdout: function(out) { console.log(out); }})
 repl.write('10\n');
 ```
 
+## .reset() 
+
+Will restart your interepter/compiler while maintaining the connection. Returns a promise.
+
 ## .evaluateOnce(code, options)
 
 Very similar to `.evaluate` but is http based and doesn't require an persistent connection to the server. In other words, no need to call `.connect` before calling this. 
