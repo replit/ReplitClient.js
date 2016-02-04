@@ -86,7 +86,13 @@ Will restart your interepter/compiler while maintaining the connection. Returns 
 
 ## .evaluateOnce(code, options)
 
-Very similar to `.evaluate` but is http based and doesn't require an persistent connection to the server. In other words, no need to call `.connect` before calling this. 
+Very similar to `.evaluate` but is http based and doesn't require an persistent connection to the server. In other words, *no* need to call `.connect` before calling this. 
+
+Additionally, it takes a timeout option that disconnects from the server and rejects the returning promise:
+* options:
+  * timeout:
+    * time: timeout in milliseconds
+    * callback: a callback that is expected to return `true` or `false` on whether we should abort the call
 
 ## .disconnect()
 
