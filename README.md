@@ -29,6 +29,8 @@ Example:
 var repl = new ReplitClient('localhost', 8080, 'ruby', token);
 ```
 
+_An optional 4th argument `socketCreator` function can be passed that allows you to intercept socket creation. You have to return a socket from this function that implements the same interface as the w3c `WebSocket`. You can use this to provide fallbacks if your users don't have websockets enabled or for testing_
+
 ## .connect()
 
 Returns a promise that would resolve or reject depending on whether we were able to connect to the server.
