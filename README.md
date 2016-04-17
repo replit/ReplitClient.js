@@ -12,12 +12,14 @@ Is the constructor and takes the following required paramaters:
   * python3
   * python
   * ruby
+  * php
   * java
   * go
   * nodejs
   * csharp
   * fsharp
   * cpp
+  * cpp11
   * c
 * token: an object representing the authentication token and has the following properties:
   * time_created: a JS unix timestamp of the time the token was created
