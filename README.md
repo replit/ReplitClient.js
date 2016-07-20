@@ -98,6 +98,29 @@ Additionally, it takes a timeout option that disconnects from the server and rej
     * time: timeout in milliseconds
     * callback: a callback that is expected to return `true` or `false` on whether we should abort the call
 
+## .runProject(files, options) (beta and subject to change)
+
+Runs code with multiple files or modules.
+
+* files: an array of file objects with a `name` and `content` string properties
+* options:
+  * stdout: optional stdout callback
+
+## .runUnitTests({ files, suiteCode }) (beta and subject to change)
+
+Runs unit tests tests against a set of files. Both takes an options object with two required arguments:
+
+* files: an array of file objects with a `name` and `content` string properties
+* suiteCode: code for the test suite
+
+Language support:
+- Java: uses JUnit and the suite class must be called `UnitTests`
+- Python and Python3: Uses the builtin `unittest` module and the unit tests class must be called `UnitTests`.
+
+## .runSingleUnitTests({ code, suiteCode }) (beta and subject to change)
+
+Convinience method that calls into `runUnitTests` with the a single "main" file with `code` as the content.
+
 ## .disconnect()
 
 Disconnects.
