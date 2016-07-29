@@ -125,6 +125,10 @@ Convinience method that calls into `runUnitTests` with the a single "main" file 
 
 Disconnects.
 
+## .stop()
+
+Will stop any currently running jobs.
+
 # Events
 
 ## 'connecting'
