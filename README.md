@@ -21,6 +21,9 @@ Is the constructor and takes the following required paramaters:
   * cpp
   * cpp11
   * c
+  * swift
+  * lua
+  * rust
 * token: an object representing the authentication token and has the following properties:
   * time_created: a JS unix timestamp of the time the token was created
   * msg_mac: HMAC authentication code based on a secret and the `time_created` property
